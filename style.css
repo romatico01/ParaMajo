@@ -1,0 +1,467 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);
+color:white;
+transition:0.4s;
+}
+
+/* ⭐ estrellas */
+
+#stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* 🌙 modo oscuro real */
+
+.dark{
+background:#000 !important;
+color:#fff;
+}
+
+.dark .card{
+background:rgba(0,0,0,0.5);
+}
+
+.dark button{
+background:#333;
+}
+
+/* contenedor */
+
+.container{
+width:100%;
+max-width:900px;
+height:90vh;
+position:relative;
+}
+
+/* 🔴 bola */
+
+#ball{
+width:22px;
+height:22px;
+background:#ff3b3b;
+border-radius:50%;
+position:absolute;
+top:-40px;
+left:50%;
+transform:translateX(-50%);
+animation:drop 2s forwards;
+box-shadow:0 0 25px red;
+}
+
+@keyframes drop{
+to{top:80%;}
+}
+
+/* layout */
+
+#scene{
+display:flex;
+align-items:center;
+justify-content:center; /* centra todo */
+gap:80px; /* más espacio entre árbol y carta */
+height:100%;
+padding:0 40px;
+}
+
+
+/* 🌳 árbol */
+
+.tree-container{
+position:relative;
+width:420px;
+height:450px;
+transform:scale(1.1);
+}
+
+
+#treeCanvas{
+position:absolute;
+bottom:110px;
+left:50%;
+transform:translateX(-50%);
+}
+
+.trunk{
+width:20px;
+height:150px;
+background:linear-gradient(#33b38a,#1c6b58);
+position:absolute;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+border-radius:12px;
+}
+
+/* ======================
+💌 SOBRE ANIMADO
+====================== */
+
+.envelope{
+position:relative;
+cursor:pointer;
+}
+
+.envelope-lid{
+position:absolute;
+top:-20px;
+left:0;
+width:100%;
+height:60px;
+background:linear-gradient(45deg,#ff7aa2,#ff4b6e);
+border-radius:15px 15px 0 0;
+transform-origin:top;
+transition:0.8s;
+z-index:5;
+}
+
+/* al abrir */
+.envelope.open .envelope-lid{
+transform:rotateX(180deg);
+}
+
+/* ======================
+💌 CARTA PREMIUM
+====================== */
+
+.card{
+background:linear-gradient(
+145deg,
+rgba(255,255,255,0.15),
+rgba(255,255,255,0.05)
+);
+backdrop-filter:blur(20px);
+padding:35px;
+border-radius:20px;
+box-shadow:0 25px 60px rgba(0,0,0,0.5);
+width:360px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+.card h2{
+color:#ff7aa2;
+margin-bottom:15px;
+font-size:24px;
+}
+
+/* foto */
+
+.photo{
+width:130px;
+height:130px;
+object-fit:cover;
+border-radius:50%;
+margin-bottom:15px;
+border:3px solid #ff7aa2;
+box-shadow:0 0 20px rgba(255,122,162,0.6);
+}
+
+/* texto carta */
+
+#text{
+line-height:1.6;
+font-size:17px;
+}
+
+/* contador */
+
+#counter{
+margin-top:15px;
+font-size:18px;
+color:#ffd700;
+}
+
+/* ❤️ corazón que late */
+
+.heart{
+font-size:40px;
+margin-top:15px;
+animation:beat 1s infinite;
+}
+
+@keyframes beat{
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
+
+/* botones */
+
+button{
+margin-top:15px;
+padding:10px 18px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#ff4b6e;
+color:white;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* dark toggle */
+
+#darkBtn{
+position:absolute;
+top:10px;
+right:10px;
+}
+
+/* ocultar */
+
+.hidden{
+display:none;
+}
+
+/* 📱 celular */
+
+@media(max-width:700px){
+#scene{
+flex-direction:column;
+justify-content:center;
+}
+
+.card{
+width:420px;
+}
+
+.tree-container{
+transform:scale(0.9);
+}
+}
+
+/* ======================
+❤️ LOADER ROMANTICO
+====================== */
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#0f3460,#16213e);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:70px;
+z-index:9999;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.25);}
+100%{transform:scale(1);}
+}
+
+
+/* ======================
+✨ PARTICULAS 3D FONDO
+====================== */
+
+#threeCanvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-2;
+pointer-events:none;
+}
+
+
+/* ======================
+🌸 PETALOS (animacion suave)
+====================== */
+
+.petal{
+position:fixed;
+pointer-events:none;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(100vh) rotate(360deg);
+opacity:0;
+}
+}
+
+
+/* ======================
+💌 SOBRE MAS REALISTA
+====================== */
+
+.envelope{
+position:relative;
+cursor:pointer;
+perspective:1000px;
+}
+
+.envelope-lid{
+position:absolute;
+top:-20px;
+left:0;
+width:100%;
+height:60px;
+background:linear-gradient(45deg,#ff7aa2,#ff4b6e);
+border-radius:15px 15px 0 0;
+transform-origin:top;
+transition:0.8s;
+z-index:5;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* efecto profundidad al abrir */
+.envelope.open .envelope-lid{
+transform:rotateX(180deg);
+}
+
+
+/* ======================
+✨ EFECTO BRILLO CARTA
+====================== */
+
+.card{
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:-100%;
+left:-100%;
+width:300%;
+height:300%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.15),
+transparent
+);
+transform:rotate(25deg);
+animation:shine 6s infinite;
+}
+
+@keyframes shine{
+0%{transform:translateX(-100%) rotate(25deg);}
+100%{transform:translateX(100%) rotate(25deg);}
+}
+
+
+/* ======================
+🌌 MEJOR TRANSICION GENERAL
+====================== */
+
+.card,
+button,
+.photo{
+transition:0.4s ease;
+}
+
+
+/* ======================
+📱 MOVIL MAS SUAVE
+====================== */
+
+@media(max-width:700px){
+
+#threeCanvas{
+display:none; /* mejora rendimiento celular */
+}
+
+#loader{
+font-size:50px;
+}
+
+}
+
+/* preguntas */
+
+#quiz{
+background:rgba(255,255,255,0.1);
+padding:25px;
+border-radius:20px;
+backdrop-filter:blur(20px);
+text-align:left;
+width:420px;
+}
+
+.pregunta{
+margin:15px 0;
+}
+
+textarea{
+width:100%;
+border-radius:10px;
+padding:10px;
+border:none;
+}
+
+
+/* preguntas encima de todo */
+#quiz{
+z-index:99999;
+}
+
+/* loader encima de todo */
+#loader{
+z-index:999999;
+}
+
+/* permitir scroll celular */
+body{
+overflow-x:hidden;
+overflow-y:auto;
+min-height:100vh;
+}
+
+/* canvas de fondo no bloquean scroll */
+#threeCanvas,
+#stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* escena adaptable */
+#scene{
+min-height:100vh;
+height:auto;
+padding:20px;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<!-- FIX MOBILE REAL -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Para alguien especial 💌</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ❤️ LOADER ROMÁNTICO (nuevo) -->
+<div id="loader">❤️</div>
+
+<!-- ⭐ partículas 3D fondo (nuevo) -->
+<canvas id="threeCanvas"></canvas>
+
+<!-- ⭐ fondo estrellas -->
+<canvas id="stars"></canvas>
+
+<div class="container">
+
+<!-- ⭐ música romántica -->
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<!-- ⭐ bola animada -->
+<div id="ball"></div>
+
+<!-- ⭐ botón modo oscuro -->
+<button id="darkBtn">🌙</button>
+
+<!-- ⭐ ESCENA PRINCIPAL -->
+<div id="scene" class="hidden">
+
+<!-- 🌳 árbol -->
+<div class="tree-container">
+  <canvas id="treeCanvas"></canvas>
+  <div class="trunk"></div>
+</div>
+
+<!-- 💌 SOBRE + CARTA -->
+<div class="envelope" id="envelope">
+
+  <div class="envelope-lid"></div>
+
+  <div class="card">
+
+    <!-- foto de ella -->
+    <img src="majo.png" class="photo" alt="foto">
+
+    <h2>Para alguien muy especial 🌸</h2>
+
+    <!-- texto romántico dinámico -->
+    <p id="text"></p>
+
+    <!-- contador -->
+    <div id="counter"></div>
+
+    <!-- corazón -->
+    <div class="heart">❤️</div>
+
+    <!-- botón secreto -->
+    <button id="secretBtn">Mensaje secreto 💌</button>
+
+    <p id="secret" class="hidden">
+      Hola,
+
+No sé exactamente en qué momento empezaste atraerme, pero sí sé por qué. No fue por tu físico, ni por algo superficial. Fue por tu manera de ser, por cómo te comportas, por esa forma tan tuya de estar en el mundo sin necesidad de llamar la atención de nadie. Me gusta que seas auténtica, que no busques aprobación y que simplemente seas tú.
+
+Muchas veces pasaba cerca de ti con ganas de hablarte, pero me ganaba la pena. Prefería verte desde lejitos, admirando en silencio lo que eres. Siempre tuve miedo de acercarme y que pensaras que soy como todos, que solo me fijo en lo externo o que mis intenciones no son sinceras.
+
+Quiero que sepas que no todos somos iguales. Yo no me enamoro de un físico, me enamoro de la esencia, de la persona que hay detrás. Tal vez no tenga el físico que muchas mujeres buscan, pero tengo un corazón grande. Soy alguien que sabe escuchar, que entiende, que abraza cuando hace falta, que da consejos sinceros, que da besitos en la frente y que pregunta “¿qué tienes?” o “¿qué te pasa?” cuando nota que algo no está bien.
+si algún día decides darme la oportunidad de conocerte más de cerca, me haría muy feliz.
+
+con cariño, FELIZ 14 DE FEBRERO; FALTARON LAS FLORES 
+    </p>
+
+  </div>
+
+</div>
+
+</div>
+</div>
+
+<!-- ⭐ librerías efectos -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
